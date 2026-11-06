@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #050307;
+    --card: #0d0912;
+    --card-light: #15101b;
+    --purple: #8b2cff;
+    --purple-light: #b35cff;
+    --text: #ffffff;
+    --gray: #aaa4b2;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   BRILHOS DO FUNDO
+================================ */
+
+.background-glow {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.glow-1 {
+    background: rgba(139, 44, 255, 0.15);
+
+    top: -250px;
+    left: -200px;
+}
+
+.glow-2 {
+    background: rgba(179, 92, 255, 0.10);
+
+    right: -250px;
+    bottom: -250px;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.calculator-container {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1;
+}
+
+
+/* ================================
+   CALCULADORA
+================================ */
+
+.calculator {
+    width: 390px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 16, 27, 0.95),
+            rgba(8, 5, 11, 0.98)
+        );
+
+    border: 1px solid rgba(139, 44, 255, 0.25);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(139, 44, 255, 0.08);
+
+    animation: calculatorEnter 0.6s ease;
+}
+
+@keyframes calculatorEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* ================================
+   TOPO
+================================ */
+
+.top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.small-title {
+    color: var(--purple-light);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 5px;
+}
+
+.top h1 {
+    font-size: 25px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: var(--purple-light);
+
+    background: rgba(139, 44, 255, 0.1);
+
+    border: 1px solid rgba(139, 44, 255, 0.25);
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 20px rgba(139, 44, 255, 0.1);
+}
+
+
+/* ================================
+   DISPLAY
+================================ */
+
+.display {
+    min-height: 120px;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    border-radius: 15px;
+
+    background: #08050b;
+
+    border: 1px solid rgba(139, 44, 255, 0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+#previous-operation {
+    width: 100%;
+
+    min-height: 22px;
+
+    color: #77717e;
+
+    font-size: 14px;
+
+    text-align: right;
+
+    overflow: hidden;
+}
+
+#current-operation {
+    width: 100%;
+
+    color: white;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    text-align: right;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.button {
+    height: 62px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #151019;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.button:hover {
+    background: #20172a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    transform: scale(0.94);
+}
+
+
+/* ================================
+   OPERADORES
+================================ */
+
+.operator {
+    color: var(--purple-light);
+
+    background:
+        rgba(139, 44, 255, 0.09);
+}
+
+.operator:hover {
+    background:
+        rgba(139, 44, 255, 0.18);
+
+    box-shadow:
+        0 0 20px rgba(139, 44, 255, 0.12);
+}
+
+
+/* ================================
+   LIMPAR
+================================ */
+
+.clear {
+    color: #ff7777;
+
+    background:
+        rgba(255, 70, 70, 0.08);
+}
+
+.clear:hover {
+    background:
+        rgba(255, 70, 70, 0.15);
+}
+
+
+/* ================================
+   IGUAL
+================================ */
+
+.equals {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--purple-light)
+        );
+
+    box-shadow:
+        0 0 25px rgba(139, 44, 255, 0.2);
+}
+
+.equals:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple-light),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 0 30px rgba(139, 44, 255, 0.35);
+}
+
+
+/* ================================
+   ZERO
+================================ */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: #66616d;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.footer span {
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media screen and (max-width: 450px) {
+
+    .calculator {
+        width: 100%;
+
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+    .button {
+        height: 58px;
+    }
+
+    #current-operation {
+        font-size: 32px;
+    }
+
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Memória | Projeto 7</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="game-container">
+
+        <!-- CABEÇALHO -->
+
+        <header class="game-header">
+
+            <p class="project-number">
+                PROJETO 07
+            </p>
+
+            <h1>
+                Jogo da <span>Memória</span>
+            </h1>
+
+            <p class="subtitle">
+                Encontre todos os pares!
+            </p>
+
+        </header>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="game-info">
+
+            <div class="info-box">
+
+                <span>
+                    MOVIMENTOS
+                </span>
+
+                <strong id="moves">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    PARES
+                </span>
+
+                <strong id="pairs">
+                    0 / 8
+                </strong>
+
+            </div>
+
+
+            <button id="restartButton">
+                ↻ Reiniciar
+            </button>
+
+        </div>
+
+
+        <!-- TABULEIRO -->
+
+        <div id="gameBoard" class="game-board">
+
+        </div>
+
+
+        <!-- MENSAGEM DE VITÓRIA -->
+
+        <div id="winMessage" class="win-message">
+
+            <div class="win-box">
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <h2>
+                    Parabéns!
+                </h2>
+
+                <p>
+                    Você encontrou todos os pares!
+                </p>
+
+                <p>
+                    Movimentos:
+                    <strong id="finalMoves">
+                        0
+                    </strong>
+                </p>
+
+                <button id="playAgain">
+                    Jogar novamente
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- VOLTAR -->
+
+        <a href="#" class="back-button" onclick="history.back()">
+            ← Voltar
+        </a>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

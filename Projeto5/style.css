@@ -1,0 +1,819 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONFIGURAÇÕES
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background: #050307;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    --roxo: #8b2cff;
+
+    --roxo-claro: #b35cff;
+
+    --roxo-escuro: #4c128f;
+
+    --branco: #ffffff;
+
+    --cinza: #aaa4b2;
+
+    --card: rgba(15, 10, 20, 0.85);
+}
+
+
+/* =========================================================
+   FUNDO
+========================================================= */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    top: -250px;
+    left: -200px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 44, 255, 0.18),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.glow-right {
+
+    top: auto;
+    left: auto;
+
+    right: -250px;
+    bottom: -250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 44, 255, 0.13),
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.weather-container {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(139, 44, 255, 0.15);
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+.logo span {
+
+    color: var(--roxo);
+}
+
+
+.back-button {
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid rgba(139, 44, 255, 0.4);
+
+    border-radius: 8px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.back-button:hover {
+
+    background:
+        rgba(139, 44, 255, 0.12);
+
+    border-color:
+        var(--roxo);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.weather-content {
+
+    padding:
+        70px 0;
+}
+
+
+.intro {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 40px;
+}
+
+
+.subtitle {
+
+    color: var(--roxo-claro);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+.intro h1 {
+
+    font-size:
+        clamp(40px, 6vw, 65px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+.intro h1 span {
+
+    color: var(--roxo);
+
+    text-shadow:
+        0 0 30px rgba(139, 44, 255, 0.35);
+}
+
+
+.description {
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.search-box {
+
+    display: flex;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 15px;
+
+    background:
+        rgba(15, 10, 20, 0.9);
+
+    border:
+        1px solid rgba(139, 44, 255, 0.2);
+
+    border-radius: 12px;
+
+    padding: 7px;
+
+    transition: 0.3s;
+}
+
+
+.search-box:focus-within {
+
+    border-color:
+        rgba(139, 44, 255, 0.7);
+
+    box-shadow:
+        0 0 30px rgba(139, 44, 255, 0.1);
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+        15px;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+.search-box input::placeholder {
+
+    color: #77717e;
+}
+
+
+.search-box button {
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding:
+        0 22px;
+
+    background:
+        var(--roxo);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.search-box button:hover {
+
+    background:
+        var(--roxo-claro);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+.message {
+
+    height: 22px;
+
+    text-align: center;
+
+    color: #ff7b7b;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+
+.weather-card {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 12, 28, 0.95),
+            rgba(10, 7, 13, 0.95)
+        );
+
+    border:
+        1px solid rgba(139, 44, 255, 0.18);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.4);
+
+    transition: 0.4s;
+}
+
+
+.weather-card:hover {
+
+    border-color:
+        rgba(139, 44, 255, 0.4);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================================
+   LOCALIZAÇÃO
+========================================================= */
+
+.location {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.location-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(139, 44, 255, 0.12);
+
+    font-size: 20px;
+}
+
+
+.location h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 4px;
+}
+
+
+.location p {
+
+    color: var(--cinza);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TEMPERATURA
+========================================================= */
+
+.temperature {
+
+    text-align: center;
+
+    padding:
+        10px 0 35px;
+}
+
+
+.weather-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 5px;
+
+    animation:
+        weatherFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes weatherFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+.temperature-number {
+
+    font-size: 75px;
+
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+
+.temperature-number span {
+
+    text-shadow:
+        0 0 30px rgba(139, 44, 255, 0.25);
+}
+
+
+.temperature p {
+
+    color: var(--roxo-claro);
+
+    font-size: 15px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.weather-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.info-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    transition: 0.3s;
+}
+
+
+.info-card:hover {
+
+    background:
+        rgba(139, 44, 255, 0.08);
+
+    border-color:
+        rgba(139, 44, 255, 0.2);
+}
+
+
+.info-icon {
+
+    font-size: 25px;
+}
+
+
+.info-card span {
+
+    display: block;
+
+    color: #77717e;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+
+.info-card strong {
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CIDADES
+========================================================= */
+
+.cities {
+
+    max-width: 850px;
+
+    margin:
+        35px auto 0;
+}
+
+
+.cities h3 {
+
+    font-size: 15px;
+
+    color: var(--cinza);
+
+    margin-bottom: 15px;
+}
+
+
+.city-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.city-buttons button {
+
+    padding:
+        10px 15px;
+
+    border:
+        1px solid rgba(139, 44, 255, 0.2);
+
+    border-radius: 8px;
+
+    background:
+        rgba(15, 10, 20, 0.8);
+
+    color: #ddd;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.city-buttons button:hover {
+
+    background:
+        rgba(139, 44, 255, 0.12);
+
+    border-color:
+        var(--roxo);
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        30px 0;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(139, 44, 255, 0.1);
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+footer p + p {
+
+    margin-top: 7px;
+}
+
+
+footer strong {
+
+    color: var(--roxo-claro);
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+.weather-card.animate {
+
+    animation:
+        cardAnimation 0.4s ease;
+}
+
+
+@keyframes cardAnimation {
+
+    0% {
+        opacity: 0.5;
+        transform:
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .weather-content {
+
+        padding:
+            50px 0;
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 8px;
+    }
+
+
+    .search-box input {
+
+        padding: 15px;
+    }
+
+
+    .search-box button {
+
+        height: 48px;
+    }
+
+
+    .weather-card {
+
+        padding: 25px 18px;
+    }
+
+
+    .weather-info {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .temperature-number {
+
+        font-size: 60px;
+    }
+
+
+    .weather-icon {
+
+        font-size: 50px;
+    }
+
+}
+
+
+@media screen and (max-width: 450px) {
+
+    .weather-container {
+
+        width: 92%;
+    }
+
+
+    .header {
+
+        height: 70px;
+    }
+
+
+    .logo {
+
+        font-size: 21px;
+    }
+
+
+    .back-button {
+
+        font-size: 12px;
+
+        padding:
+            8px 12px;
+    }
+
+
+    .intro h1 {
+
+        font-size: 38px;
+    }
+
+
+    .city-buttons button {
+
+        flex: 1;
+    }
+
+}

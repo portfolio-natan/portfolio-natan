@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Cobrinha | Projeto 8</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="game-container">
+
+        <!-- =================================================
+             CABEÇALHO
+        ================================================== -->
+
+        <header class="game-header">
+
+            <p class="project-number">
+                PROJETO 08
+            </p>
+
+            <h1>
+                Jogo da <span>Cobrinha</span>
+            </h1>
+
+            <p class="subtitle">
+                Coma as frutas e tente fazer a maior pontuação!
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             INFORMAÇÕES
+        ================================================== -->
+
+        <div class="game-info">
+
+            <div class="info-box">
+
+                <span>
+                    PONTUAÇÃO
+                </span>
+
+                <strong id="score">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    RECORDE
+                </span>
+
+                <strong id="highScore">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ÁREA DO JOGO
+        ================================================== -->
+
+        <div class="game-area">
+
+            <canvas id="gameCanvas"></canvas>
+
+
+            <!-- TELA INICIAL -->
+
+            <div id="startScreen" class="game-overlay">
+
+                <div class="overlay-content">
+
+                    <div class="snake-icon">
+                        🐍
+                    </div>
+
+                    <h2>
+                        Jogo da Cobrinha
+                    </h2>
+
+                    <p>
+                        Use as setas do teclado para controlar
+                        a cobrinha.
+                    </p>
+
+                    <button id="startButton">
+                        Começar Jogo
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- GAME OVER -->
+
+            <div id="gameOver" class="game-overlay hidden">
+
+                <div class="overlay-content">
+
+                    <div class="snake-icon">
+                        💀
+                    </div>
+
+                    <h2>
+                        Game Over!
+                    </h2>
+
+                    <p>
+                        Sua pontuação foi:
+                        <strong id="finalScore">
+                            0
+                        </strong>
+                    </p>
+
+                    <button id="restartButton">
+                        Jogar Novamente
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTROLES
+        ================================================== -->
+
+        <div class="controls">
+
+            <p>
+                Use as teclas
+                <strong>↑ ↓ ← →</strong>
+                para movimentar
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             VOLTAR
+        ================================================== -->
+
+        <a href="#" class="back-button" onclick="history.back()">
+            ← Voltar
+        </a>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

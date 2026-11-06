@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jokenpô | Projeto 6</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="game-container">
+
+        <div class="header">
+
+            <p>PROJETO 06</p>
+
+            <h1>
+                Joken<span>pô</span>
+            </h1>
+
+            <p class="subtitle">
+                Pedra, Papel ou Tesoura?
+            </p>
+
+        </div>
+
+
+        <div class="scoreboard">
+
+            <div class="score">
+
+                <span>VOCÊ</span>
+
+                <strong id="playerScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="versus">
+                VS
+            </div>
+
+
+            <div class="score">
+
+                <span>COMPUTADOR</span>
+
+                <strong id="computerScore">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="battle">
+
+            <div class="player-choice">
+
+                <h2>
+                    Você
+                </h2>
+
+                <div
+                    id="playerChoice"
+                    class="choice-display">
+                    ❔
+                </div>
+
+            </div>
+
+
+            <div class="result">
+
+                <span id="resultText">
+                    Escolha uma opção!
+                </span>
+
+            </div>
+
+
+            <div class="computer-choice">
+
+                <h2>
+                    Computador
+                </h2>
+
+                <div
+                    id="computerChoice"
+                    class="choice-display">
+                    ❔
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="choices">
+
+            <button
+                class="choice-button"
+                data-choice="pedra">
+
+                <span class="emoji">
+                    ✊
+                </span>
+
+                <span>
+                    Pedra
+                </span>
+
+            </button>
+
+
+            <button
+                class="choice-button"
+                data-choice="papel">
+
+                <span class="emoji">
+                    ✋
+                </span>
+
+                <span>
+                    Papel
+                </span>
+
+            </button>
+
+
+            <button
+                class="choice-button"
+                data-choice="tesoura">
+
+                <span class="emoji">
+                    ✌️
+                </span>
+
+                <span>
+                    Tesoura
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <button
+            id="resetButton"
+            class="reset-button">
+
+            ↻ Reiniciar partida
+
+        </button>
+
+
+        <a
+            href="#"
+            class="back-button"
+            onclick="history.back(); return false;">
+
+            ← Voltar
+
+        </a>
+
+    </main>
+
+
+    <!-- ================================
+         GAME OVER
+    ================================= -->
+
+    <div
+        id="gameOverScreen"
+        class="game-over-screen">
+
+        <div class="game-over-content">
+
+            <p class="game-over-small">
+                FIM DE JOGO
+            </p>
+
+
+            <h1 id="gameOverTitle">
+                GAME OVER
+            </h1>
+
+
+            <div class="game-over-line"></div>
+
+
+            <p
+                id="gameOverMessage"
+                class="game-over-message">
+
+                Você perdeu!
+
+            </p>
+
+
+            <div class="final-score">
+
+                <div>
+
+                    <span>
+                        VOCÊ
+                    </span>
+
+                    <strong id="finalPlayerScore">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="score-x">
+                    VS
+                </div>
+
+
+                <div>
+
+                    <span>
+                        COMPUTADOR
+                    </span>
+
+                    <strong id="finalComputerScore">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="playAgainButton"
+                class="play-again-button">
+
+                JOGAR NOVAMENTE
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

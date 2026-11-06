@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Site de clima desenvolvido por Natan">
+
+    <title>Clima | Natan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FUNDO -->
+    <div class="background-glow"></div>
+    <div class="background-glow glow-right"></div>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <main class="weather-container">
+
+        <!-- CABEÇALHO -->
+        <header class="header">
+
+            <div class="logo">
+                <span>&lt;</span>Clima<span>/&gt;</span>
+            </div>
+
+            <a href="../index.html" class="back-button">
+                ← Voltar
+            </a>
+
+        </header>
+
+
+        <!-- CONTEÚDO -->
+        <section class="weather-content">
+
+            <div class="intro">
+
+                <p class="subtitle">
+                    PREVISÃO DO TEMPO
+                </p>
+
+                <h1>
+                    Como está o
+                    <span>clima?</span>
+                </h1>
+
+                <p class="description">
+                    Pesquise uma cidade e confira as informações
+                    climáticas de forma rápida e simples.
+                </p>
+
+            </div>
+
+
+            <!-- PESQUISA -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Digite o nome da cidade..."
+                    autocomplete="off"
+                >
+
+                <button id="searchButton">
+                    🔍 Pesquisar
+                </button>
+
+            </div>
+
+
+            <!-- AVISO -->
+            <p id="message" class="message"></p>
+
+
+            <!-- CARD DO CLIMA -->
+            <section class="weather-card" id="weatherCard">
+
+                <div class="location">
+
+                    <span class="location-icon">
+                        📍
+                    </span>
+
+                    <div>
+                        <h2 id="cityName">
+                            São Paulo
+                        </h2>
+
+                        <p id="countryName">
+                            Brasil
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- TEMPERATURA -->
+                <div class="temperature">
+
+                    <div class="weather-icon" id="weatherIcon">
+                        ☀️
+                    </div>
+
+                    <div class="temperature-number">
+                        <span id="temperature">
+                            24
+                        </span>°C
+                    </div>
+
+                    <p id="weatherDescription">
+                        Ensolarado
+                    </p>
+
+                </div>
+
+
+                <!-- INFORMAÇÕES -->
+                <div class="weather-info">
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            💧
+                        </div>
+
+                        <div>
+                            <span>Umidade</span>
+                            <strong id="humidity">
+                                65%
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            💨
+                        </div>
+
+                        <div>
+                            <span>Vento</span>
+                            <strong id="wind">
+                                12 km/h
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🌡️
+                        </div>
+
+                        <div>
+                            <span>Sensação</span>
+                            <strong id="feelsLike">
+                                25°C
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CIDADES SUGERIDAS -->
+            <section class="cities">
+
+                <h3>
+                    Pesquisas rápidas
+                </h3>
+
+                <div class="city-buttons">
+
+                    <button data-city="São Paulo">
+                        🇧🇷 São Paulo
+                    </button>
+
+                    <button data-city="Rio de Janeiro">
+                        🇧🇷 Rio de Janeiro
+                    </button>
+
+                    <button data-city="Curitiba">
+                        🇧🇷 Curitiba
+                    </button>
+
+                    <button data-city="Campinas">
+                        🇧🇷 Campinas
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer>
+
+            <p>
+                Projeto desenvolvido por
+                <strong>Natan</strong>
+            </p>
+
+            <p>
+                HTML • CSS • JavaScript
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

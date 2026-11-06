@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Pizza House - As melhores pizzas da cidade. Confira nosso cardápio e faça seu pedido!">
+
+    <title>Pizza House | Pizzaria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         CABEÇALHO
+    ================================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            🍕 <span>Pizza</span> House
+        </div>
+
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button class="cart-button" onclick="abrirCarrinho()">
+            🛒
+            <span id="quantidadeCarrinho">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- ================================
+         INÍCIO
+    ================================= -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-subtitle">
+                🍕 A MELHOR PIZZA DA CIDADE
+            </p>
+
+            <h1>
+                Sabor que faz
+                <span>você voltar!</span>
+            </h1>
+
+            <p>
+                Pizzas artesanais preparadas com ingredientes selecionados,
+                massa especial e muito sabor.
+            </p>
+
+            <a href="#cardapio" class="hero-button">
+                Ver nosso cardápio
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CARDÁPIO
+    ================================= -->
+
+    <section id="cardapio" class="cardapio">
+
+        <div class="section-title">
+
+            <p>ESCOLHA SUA FAVORITA</p>
+
+            <h2>
+                Nosso <span>Cardápio</span>
+            </h2>
+
+        </div>
+
+
+        <div class="pizzas">
+
+
+            <!-- PIZZA 1 -->
+
+            <article class="pizza-card">
+
+                <div class="pizza-image">
+                    🍕
+                </div>
+
+                <div class="pizza-content">
+
+                    <span class="categoria">
+                        TRADICIONAL
+                    </span>
+
+                    <h3>
+                        Calabresa
+                    </h3>
+
+                    <p>
+                        Molho de tomate, queijo mussarela,
+                        calabresa e cebola.
+                    </p>
+
+                    <div class="pizza-bottom">
+
+                        <strong>
+                            R$ 39,90
+                        </strong>
+
+                        <button onclick="adicionarCarrinho('Calabresa', 39.90)">
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PIZZA 2 -->
+
+            <article class="pizza-card">
+
+                <div class="pizza-image">
+                    🍕
+                </div>
+
+                <div class="pizza-content">
+
+                    <span class="categoria">
+                        TRADICIONAL
+                    </span>
+
+                    <h3>
+                        Mussarela
+                    </h3>
+
+                    <p>
+                        Molho de tomate, queijo mussarela,
+                        tomate e orégano.
+                    </p>
+
+                    <div class="pizza-bottom">
+
+                        <strong>
+                            R$ 37,90
+                        </strong>
+
+                        <button onclick="adicionarCarrinho('Mussarela', 37.90)">
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PIZZA 3 -->
+
+            <article class="pizza-card">
+
+                <div class="pizza-image">
+                    🍕
+                </div>
+
+                <div class="pizza-content">
+
+                    <span class="categoria">
+                        ESPECIAL
+                    </span>
+
+                    <h3>
+                        Frango com Catupiry
+                    </h3>
+
+                    <p>
+                        Frango desfiado, mussarela e
+                        catupiry cremoso.
+                    </p>
+
+                    <div class="pizza-bottom">
+
+                        <strong>
+                            R$ 44,90
+                        </strong>
+
+                        <button onclick="adicionarCarrinho('Frango com Catupiry', 44.90)">
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PIZZA 4 -->
+
+            <article class="pizza-card">
+
+                <div class="pizza-image">
+                    🍕
+                </div>
+
+                <div class="pizza-content">
+
+                    <span class="categoria">
+                        ESPECIAL
+                    </span>
+
+                    <h3>
+                        Quatro Queijos
+                    </h3>
+
+                    <p>
+                        Mussarela, provolone, parmesão
+                        e catupiry.
+                    </p>
+
+                    <div class="pizza-bottom">
+
+                        <strong>
+                            R$ 46,90
+                        </strong>
+
+                        <button onclick="adicionarCarrinho('Quatro Queijos', 46.90)">
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PIZZA 5 -->
+
+            <article class="pizza-card">
+
+                <div class="pizza-image">
+                    🍕
+                </div>
+
+                <div class="pizza-content">
+
+                    <span class="categoria">
+                        ESPECIAL
+                    </span>
+
+                    <h3>
+                        Portuguesa
+                    </h3>
+
+                    <p>
+                        Presunto, queijo, ovo, cebola,
+                        tomate e azeitona.
+                    </p>
+
+                    <div class="pizza-bottom">
+
+                        <strong>
+                            R$ 45,90
+                        </strong>
+
+                        <button onclick="adicionarCarrinho('Portuguesa', 45.90)">
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PIZZA 6 -->
+
+            <article class="pizza-card">
+
+                <div class="pizza-image">
+                    🍕
+                </div>
+
+                <div class="pizza-content">
+
+                    <span class="categoria">
+                        ESPECIAL
+                    </span>
+
+                    <h3>
+                        Bacon
+                    </h3>
+
+                    <p>
+                        Molho especial, mussarela,
+                        bacon crocante e orégano.
+                    </p>
+
+                    <div class="pizza-bottom">
+
+                        <strong>
+                            R$ 43,90
+                        </strong>
+
+                        <button onclick="adicionarCarrinho('Bacon', 43.90)">
+                            Adicionar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         SOBRE
+    ================================= -->
+
+    <section id="sobre" class="sobre">
+
+        <div class="sobre-content">
+
+            <div>
+
+                <p class="section-small">
+                    NOSSA HISTÓRIA
+                </p>
+
+                <h2>
+                    Feita com paixão,
+                    <span>servida com sabor.</span>
+                </h2>
+
+                <p>
+                    Na Pizza House, cada pizza é preparada com carinho,
+                    utilizando ingredientes selecionados e uma massa
+                    artesanal especial.
+                </p>
+
+                <p>
+                    Nosso objetivo é proporcionar uma experiência deliciosa
+                    para você, sua família e seus amigos.
+                </p>
+
+            </div>
+
+            <div class="sobre-icon">
+                🍕
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CONTATO
+    ================================= -->
+
+    <section id="contato" class="contato">
+
+        <div class="section-title">
+
+            <p>FALE CONOSCO</p>
+
+            <h2>
+                Entre em <span>Contato</span>
+            </h2>
+
+        </div>
+
+        <div class="contato-box">
+
+            <div>
+                📍 Rua das Pizzas, 123
+            </div>
+
+            <div>
+                📞 (19) 99254-7693
+            </div>
+
+            <div>
+                ⏰ Terça a Domingo - 18h às 23h
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         RODAPÉ
+    ================================= -->
+
+    <footer>
+
+        <div class="logo">
+            🍕 <span>Pizza</span> House
+        </div>
+
+        <p>
+            © 2026 Pizza House. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- ================================
+         CARRINHO
+    ================================= -->
+
+    <div id="carrinho" class="carrinho">
+
+        <div class="carrinho-box">
+
+            <button class="fechar" onclick="fecharCarrinho()">
+                ×
+            </button>
+
+            <h2>
+                🛒 Seu Pedido
+            </h2>
+
+            <div id="listaCarrinho">
+                <p class="carrinho-vazio">
+                    Seu carrinho está vazio.
+                </p>
+            </div>
+
+            <div class="carrinho-total">
+
+                <span>
+                    Total:
+                </span>
+
+                <strong id="totalCarrinho">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+            <button class="finalizar" onclick="finalizarPedido()">
+                Finalizar Pedido
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
